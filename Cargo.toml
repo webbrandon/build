@@ -10,4 +10,4 @@ repository = "https://github.com/webbrandon/build"
 license = "MIT"
 
 [dependencies]
-rustc-serialize = "*"
+rustc-serialize = "0.3.21"
