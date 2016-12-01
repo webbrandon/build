@@ -1,7 +1,7 @@
 [package]
 name = "build"
-version = "0.0.1"
-authors = ["Brandon Clark <bclark@themindspot.com>"]
+version = "0.0.2"
+authors = ["Brandon Clark <bclark@hotmail.com>"]
 description = "JSON formatted application build details provided by the Cargo.toml file."
 documentation = "https://github.com/webbrandon/build/docs"
 publish = true
