@@ -18,10 +18,10 @@ struct BuildBody {
     id: i16,
     attributes: BuildDetailAttributes
 }
-impl Encodable for BuildDetail {
+impl Encodable for BuildBody {
     fn encode<S: Encoder>(&self, encoder: &mut S) -> Result<(), S::Error> {
         match * self {
-            BuildDetail { _type: ref p_type, id: ref p_id, attributes: ref p_attributes } =>
+            BuildBody { _type: ref p_type, id: ref p_id, attributes: ref p_attributes } =>
                 encoder.emit_struct("BuildDetail", 3usize, |enc| -> _ {
                     try!(enc.emit_struct_field( "type", 0usize, |enc| p_type.encode(enc)));
                     try!(enc.emit_struct_field( "id", 1usize, |enc| p_id.encode(enc)));
@@ -33,7 +33,7 @@ impl Encodable for BuildDetail {
 
 #[derive(RustcEncodable)]
 struct Build {
-    data: Vec<BuildBOdy>
+    data: Vec<BuildBody>
 }
 
 fn get_build_attributes() -> BuildDetailAttributes {
@@ -46,7 +46,7 @@ fn get_build_attributes() -> BuildDetailAttributes {
     };
 }
 
-fn get_build_body(attributes : BuildDetailAttributes) -> BuildDetail {
+fn get_build_body(attributes : BuildDetailAttributes) -> BuildBody {
     return BuildBody {
         _type: "build".to_string(),
         id: 1,
@@ -60,17 +60,11 @@ fn get_build(body : BuildBody ) -> Build {
     };
 }
 
-pub mod fn build_as_json() -> String {
+pub fn build_as_json() -> String {
     let attributes = get_build_attributes();
     let body = get_build_body(attributes);
     let json = get_build(body);
     let payload = json::encode(&json).unwrap();
 
     return payload;
-}
-
-// Lets deliver an HTML template that request JSON.
-// For now just deliver a String.
-fn build_as_html() -> String {
-    return "build statement goes here".to_string();
 }
