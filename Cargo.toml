@@ -5,8 +5,8 @@ authors = ["Brandon Clark <bclark@themindspot.com>"]
 description = "JSON formatted application build details provided by the Cargo.toml file."
 documentation = "https://github.com/webbrandon/build/docs"
 publish = true
-homepage = "none"
-repository = "https://github.com/webbrandon/build/docs"
+homepage = "https://github.com/webbrandon/build"
+repository = "https://github.com/webbrandon/build"
 license = "MIT"
 
 [dependencies]
