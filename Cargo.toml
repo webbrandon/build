@@ -1,0 +1,12 @@
+[package]
+name = "build"
+version = "0.0.1"
+authors = ["Brandon Clark <bclark@themindspot.com>"]
+description = "JSON formatted application build details provided by the Cargo.toml file."
+documentation = "https://github.com/webbrandon/build/docs"
+publish = true
+homepage = "none"
+repository = "https://github.com/webbrandon/build/docs"
+license = "MIT"
+
+[dependencies]
