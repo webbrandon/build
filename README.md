@@ -1,3 +1,4 @@
+![](https://img.shields.io/crates/v/build.svg)  
 # Build
 JSON formatted application build details provided by the Cargo.toml file.
 
