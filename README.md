@@ -27,9 +27,3 @@ fn main(){
  ```
  cargo run | jq
  ```
-
-
-## TODO
-1. Encapsulate environment request with `try!` and alternate response structures when some cannot be obtained.
-2. Provide string response for all `env` request types to *Cargo.toml* files offer.
-3. ... [Suggestions?](https://github.com/webbrandon/build/labels/enhancement)
